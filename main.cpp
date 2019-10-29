@@ -63,14 +63,20 @@ int main()
 			break;
 		case 5:
 			//alterar valor por posição
-			listarItens(cabeca, itens, false);
-			alterarValor(&cabeca, &cauda, itens);
+			if (listaVazia(itens, true) == false)
+			{
+				listarItens(cabeca, itens, false);
+				alterarValor(&cabeca, &cauda, itens);
+			}
 			system("cls");
 			break;
 		case 6:
 			//excluir por posição
-			listarItens(cabeca, itens, false);
-			itens = excluirPosicao(&cabeca, &cauda, itens);
+			if (listaVazia(itens, true) == false)
+			{
+				listarItens(cabeca, itens, false);
+				itens = excluirPosicao(&cabeca, &cauda, itens);
+			}
 			system("cls");
 			break;
 		case 7:
@@ -315,9 +321,6 @@ int excluirPosicao(no** cabeca, no** cauda, int itens)
 			}
 		}
 		itens--;
-	}
-	else
-	{
 	}
 	return itens;
 }
